@@ -33,15 +33,17 @@ private Long Rid;
 	 @JoinColumn(name="Id_Article")
 	 private Article article;
 	private Date date_heure;
-	private int id_Créateur;
+	@ManyToOne
+	@JoinColumn(name="ID_Personnel")
+	private Personnel Createur;
 	private double tarif;
-	public Reparation( Client client, Boutique boutique, Date date_heure, int id_Créateur, double tarif) {
+	public Reparation( Client client, Boutique boutique, Date date_heure, Personnel createur, double tarif) {
 		super();
 		
 		this.client = client;
 		this.boutique = boutique;
 		this.date_heure = date_heure;
-		this.id_Créateur = id_Créateur;
+		this.Createur = createur;
 		this.tarif = tarif;
 	}
 	public Reparation() {
@@ -84,11 +86,11 @@ private Long Rid;
 	public void setDate_heure(Date date_heure) {
 		this.date_heure = date_heure;
 	}
-	public int getId_Créateur() {
-		return id_Créateur;
+	public Personnel getId_Créateur() {
+		return Createur;
 	}
-	public void setId_Créateur(int id_Créateur) {
-		this.id_Créateur = id_Créateur;
+	public void setId_Créateur(Personnel Createur) {
+		this.Createur = Createur;
 	}
 	
 }

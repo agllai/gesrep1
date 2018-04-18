@@ -20,12 +20,7 @@ private long Id_Bon_Réparation;
 	@OneToOne
 	@JoinColumn(name="Rid")
 private Reparation réparation;
-	public long getId_Bon_Réparation() {
-		return Id_Bon_Réparation;
-	}
-	public void setId_Bon_Réparation(long id_Bon_Réparation) {
-		Id_Bon_Réparation = id_Bon_Réparation;
-	}
+	
 	@OneToOne
 	@JoinColumn(name="id_article")
 private Article article;
@@ -42,6 +37,12 @@ private List<Personnel> Réparateur;
 	@OneToOne
 	@JoinColumn(name="id_créateur")
 private Personnel Créateur;
+	public long getId_Bon_Réparation() {
+		return Id_Bon_Réparation;
+	}
+	public void setId_Bon_Réparation(long id_Bon_Réparation) {
+		Id_Bon_Réparation = id_Bon_Réparation;
+	}
 public Reparation getRéparation() {
 	return réparation;
 }

@@ -24,9 +24,9 @@ public Devis() {
 }
 
 
-public Devis( Client client, Boutique boutique, Date date_heure, int id_Créateur, double tarif, int dEid,
+public Devis( Client client, Boutique boutique, Date date_heure, Personnel Createur, double tarif, int dEid,
 		String commentaire) {
-	super(client, boutique, date_heure, id_Créateur, tarif);
+	super(client, boutique, date_heure,Createur, tarif);
 
 	Commentaire = commentaire;
 }

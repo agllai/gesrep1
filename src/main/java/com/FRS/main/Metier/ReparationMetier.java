@@ -19,16 +19,16 @@ package com.FRS.main.Metier;
 	import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RestController;
 
-	import com.FRS.main.dao.ArticleRepository;
-	import com.FRS.main.dao.ClientRepository;
-	import com.FRS.main.dao.Demande_ReparationRepository;
-	import com.FRS.main.dao.EncaissementRepository;
-	import com.FRS.main.dao.ResponceWrapper;
-	import com.FRS.main.dao.TacheReparationRepository;
-	import com.FRS.main.entities.Article;
-	import com.FRS.main.entities.Client;
-	import com.FRS.main.entities.Demande_Reparation;
-	import com.FRS.main.entities.Encaissement;
+import com.FRS.main.dao.ArticleRepository;
+import com.FRS.main.dao.ClientRepository;
+import com.FRS.main.dao.Demande_ReparationRepository;
+import com.FRS.main.dao.EncaissementRepository;
+import com.FRS.main.dao.ResponceWrapper;
+import com.FRS.main.dao.TacheReparationRepository;
+import com.FRS.main.entities.Article;
+import com.FRS.main.entities.Client;
+import com.FRS.main.entities.Demande_Reparation;
+import com.FRS.main.entities.Encaissement;
 
 	
 	public class ReparationMetier {

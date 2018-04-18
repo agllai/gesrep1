@@ -28,9 +28,9 @@ public class QReparation extends EntityPathBase<Reparation> {
 
     public final QClient client;
 
-    public final DatePath<java.sql.Date> date_heure = createDate("date_heure", java.sql.Date.class);
+    public final QPersonnel Createur;
 
-    public final NumberPath<Integer> id_Créateur = createNumber("id_Créateur", Integer.class);
+    public final DatePath<java.sql.Date> date_heure = createDate("date_heure", java.sql.Date.class);
 
     public final NumberPath<Long> Rid = createNumber("Rid", Long.class);
 
@@ -57,6 +57,7 @@ public class QReparation extends EntityPathBase<Reparation> {
         this.article = inits.isInitialized("article") ? new QArticle(forProperty("article"), inits.get("article")) : null;
         this.boutique = inits.isInitialized("boutique") ? new QBoutique(forProperty("boutique")) : null;
         this.client = inits.isInitialized("client") ? new QClient(forProperty("client")) : null;
+        this.Createur = inits.isInitialized("Createur") ? new QPersonnel(forProperty("Createur"), inits.get("Createur")) : null;
     }
 
 }

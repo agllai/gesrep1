@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FRS.main.dao.BoutiqueRepository;
-
 import com.FRS.main.entities.Boutique;
 
 
