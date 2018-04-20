@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ResponceWrapperService } from './Srevice/ResponceWrapperService';
+import { ClientService } from './Srevice/ClientService';
 
 
 @NgModule({
@@ -23,12 +24,16 @@ import { ResponceWrapperService } from './Srevice/ResponceWrapperService';
     RouterModule.forRoot([
       {path:"",
       component:ResponceWrapperComponent
+    },
+    {
+      path:"\op",
+      component:AppComponent
     }
 
     ])
     
   ],
-  providers: [ResponceWrapperService],
+  providers: [ResponceWrapperService,ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

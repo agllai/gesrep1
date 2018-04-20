@@ -25,7 +25,7 @@ import com.FRS.main.dao.ClientRepository;
 import com.FRS.main.entities.Client;
 @RestController
 @RequestMapping("/Gesrep")
-//@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
+@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 @Transactional
 public class ClientCotroller  {
 	@Autowired
