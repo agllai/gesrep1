@@ -40,7 +40,7 @@ public class QEncaissement extends EntityPathBase<Encaissement> {
 
     public final NumberPath<Long> Réduction = createNumber("Réduction", Long.class);
 
-    public final CollectionPath<Tache_Reparation, QTache_Reparation> tacheRep = this.<Tache_Reparation, QTache_Reparation>createCollection("tacheRep", Tache_Reparation.class, QTache_Reparation.class, PathInits.DIRECT2);
+    public final ListPath<Tache_Reparation, QTache_Reparation> tacheRep = this.<Tache_Reparation, QTache_Reparation>createList("tacheRep", Tache_Reparation.class, QTache_Reparation.class, PathInits.DIRECT2);
 
     public final NumberPath<Double> tarif = createNumber("tarif", Double.class);
 

@@ -1,8 +1,9 @@
 export class Client{
     Id_Client:number;
-    type_client:String;
+    typeClient:String;
     nom:String;
     adresse:String;
     mail:String;
-    Num_tel:String;
+    numtel:number;
+    constructor() { }
 }

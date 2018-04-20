@@ -30,13 +30,13 @@ import com.FRS.main.entities.Client;
 public class ClientCotroller  {
 	@Autowired
 public ClientRepository clientRepository;
-	@InitBinder
-	private void dataBinder(WebDataBinder binder)
-	{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		CustomDateEditor editor = new CustomDateEditor(dateFormat, true);
-		binder.registerCustomEditor(Date.class, editor);
-	}
+//	@InitBinder
+//	private void dataBinder(WebDataBinder binder)
+//	{
+//		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//		CustomDateEditor editor = new CustomDateEditor(dateFormat, true);
+//		binder.registerCustomEditor(Date.class, editor);
+//	}
 	@GetMapping(value="/Client", produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Client> GetClients() {
 		return clientRepository.findAll();
@@ -74,11 +74,11 @@ public ClientRepository clientRepository;
 
 	}
 	
-	@PostMapping(value="/Client",produces=MediaType.APPLICATION_JSON_VALUE)
-	public Client Createclt(@RequestParam String nomclt, @RequestParam String Adresse) {
-		Client clt=new Client("", nomclt, Adresse, "", "", "");
-	return 	clientRepository.save(clt);
-
-	}
+//	@PostMapping(value="/Client",produces=MediaType.APPLICATION_JSON_VALUE)
+//	public Client Createclt(@RequestParam String nomclt, @RequestParam String Adresse) {
+//		Client clt=new Client("", nomclt, Adresse, "", "", "");
+//	return 	clientRepository.save(clt);
+//
+//	}
 
 }

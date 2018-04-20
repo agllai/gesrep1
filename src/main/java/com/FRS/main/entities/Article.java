@@ -26,9 +26,9 @@ public class Article implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="id_boutique")
 	private Boutique boutique;
-	@ManyToOne
-	@JoinColumn(name="id_operateur")
-	private Operateur operateur;
+//	@ManyToOne
+//	@JoinColumn(name="id_operateur")
+	private String operateur;
 	@OneToOne
 	@JoinColumn(name="Rid")
 	private Reparation reparation;
@@ -66,10 +66,10 @@ public class Article implements Serializable{
 	public void setBoutique(Boutique boutique) {
 		this.boutique = boutique;
 	}
-	public Operateur getOperateur() {
+	public String getOperateur() {
 		return operateur;
 	}
-	public void setOperateur(Operateur operateur) {
+	public void setOperateur(String operateur) {
 		this.operateur = operateur;
 	}
 
@@ -99,7 +99,7 @@ public class Article implements Serializable{
 	}
 
 	public Article( String serial_Number, String marque, String model, Boutique boutique,
-			Operateur operateur, Reparation reparation, Boolean livraison, Date date_récupération, String commentaire,
+			String operateur, Reparation reparation, Boolean livraison, Date date_récupération, String commentaire,
 			String code_Securite) {
 		super();
 		

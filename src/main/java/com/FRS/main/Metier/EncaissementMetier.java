@@ -19,7 +19,7 @@ public void Create(Encaissement Enc) {
 	for(Tache_Reparation TR:Enc.getTacheRep()) {
 	CTR.add(TRR.save(TR));
 	}
-	Enc.setTacheRep(CTR);
+	//Enc.setTacheRep(CTR);
 	Encaissement Enc1=EncRep.save(Enc);
 	for(Tache_Reparation TR1 : CTR) {
 		TR1.setEnc(Enc1);

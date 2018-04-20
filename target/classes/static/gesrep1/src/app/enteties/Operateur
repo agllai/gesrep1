@@ -1,5 +1,0 @@
-export class Operateur{
-  Id_Article:number;
-    Serial_Number:String;
-	Marque:String;
-}

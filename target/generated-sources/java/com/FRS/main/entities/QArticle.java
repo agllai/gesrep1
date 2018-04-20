@@ -38,7 +38,7 @@ public class QArticle extends EntityPathBase<Article> {
 
     public final StringPath Model = createString("Model");
 
-    public final QOperateur operateur;
+    public final StringPath operateur = createString("operateur");
 
     public final QReparation reparation;
 
@@ -63,7 +63,6 @@ public class QArticle extends EntityPathBase<Article> {
     public QArticle(Class<? extends Article> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.boutique = inits.isInitialized("boutique") ? new QBoutique(forProperty("boutique")) : null;
-        this.operateur = inits.isInitialized("operateur") ? new QOperateur(forProperty("operateur")) : null;
         this.reparation = inits.isInitialized("reparation") ? new QReparation(forProperty("reparation"), inits.get("reparation")) : null;
     }
 

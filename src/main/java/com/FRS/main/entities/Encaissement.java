@@ -2,6 +2,7 @@ package com.FRS.main.entities;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,8 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import net.minidev.json.annotate.JsonIgnore;
 @Entity
 public class Encaissement implements Serializable{
 	@Id @GeneratedValue(strategy= GenerationType.AUTO)
@@ -37,19 +40,19 @@ public class Encaissement implements Serializable{
 	private double tarif;
 	@OneToMany
 	@JoinColumn(name="Id_Tache_Réparation")
-	private Collection<Tache_Reparation> tacheRep;
+	@JsonIgnore
+	private List<Tache_Reparation> tacheRep;
 	public Long getId_Encaissement() {
 		return Id_Encaissement;
 	}
 	public void setId_Encaissement(Long id_Encaissement) {
 		Id_Encaissement = id_Encaissement;
 	}
-	public Collection<Tache_Reparation> getTacheRep() {
+	public List<Tache_Reparation> getTacheRep() {
 		return tacheRep;
 	}
-	public void setTacheRep(Collection<Tache_Reparation> tacheRep) {
-		this.tacheRep = tacheRep;
-	}
+	public void addTacheRep(Tache_Reparation tacheRep) {
+		this.tacheRep.add( tacheRep);	}
 	
 	public Boutique getBoutique() {
 		return boutique;
@@ -156,7 +159,7 @@ public class Encaissement implements Serializable{
 		Total_TTC = total_TTC;
 		TVA = tVA;
 		Reste_a_Paye = reste_a_Paye;
-		this.tarif = this.demande_reparation.getTarif();
+		
 	}
 	public Encaissement() {
 		super();

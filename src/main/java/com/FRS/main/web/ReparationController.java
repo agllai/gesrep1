@@ -14,7 +14,7 @@ import com.FRS.main.dao.ArticleRepository;
 import com.FRS.main.dao.ClientRepository;
 import com.FRS.main.dao.Demande_ReparationRepository;
 import com.FRS.main.dao.EncaissementRepository;
-import com.FRS.main.dao.ResponceWrapper;
+import com.FRS.main.dao.ResponceWrapperDao;
 import com.FRS.main.dao.TacheReparationRepository;
 import com.FRS.main.entities.Article;
 import com.FRS.main.entities.Client;

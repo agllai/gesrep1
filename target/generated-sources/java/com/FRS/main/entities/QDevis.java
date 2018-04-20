@@ -37,19 +37,16 @@ public class QDevis extends EntityPathBase<Devis> {
 
     public final StringPath commentaire = createString("commentaire");
 
-    // inherited
-    public final QPersonnel Createur;
-
     //inherited
     public final DatePath<java.sql.Date> date_heure;
 
     public final NumberPath<Long> DEid = createNumber("DEid", Long.class);
 
-    //inherited
-    public final NumberPath<Long> Rid;
+    // inherited
+    public final QPersonnel personnel;
 
     //inherited
-    public final NumberPath<Double> tarif;
+    public final NumberPath<Long> Rid;
 
     public QDevis(String variable) {
         this(Devis.class, forVariable(variable), INITS);
@@ -73,10 +70,9 @@ public class QDevis extends EntityPathBase<Devis> {
         this.article = _super.article;
         this.boutique = _super.boutique;
         this.client = _super.client;
-        this.Createur = _super.Createur;
         this.date_heure = _super.date_heure;
+        this.personnel = _super.personnel;
         this.Rid = _super.Rid;
-        this.tarif = _super.tarif;
     }
 
 }

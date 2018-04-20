@@ -3,6 +3,7 @@ package com.FRS.main.entities;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,6 +26,7 @@ public abstract class Reparation implements Serializable{
 private Long Rid;
 	 @ManyToOne
 	 @JoinColumn(name="Id_Client")
+	 
 	private Client client;
 	 @ManyToOne
 	 @JoinColumn(name="Id_boutique")
@@ -34,17 +36,18 @@ private Long Rid;
 	 private Article article;
 	private Date date_heure;
 	@ManyToOne
-	@JoinColumn(name="ID_Personnel")
-	private Personnel Createur;
-	private double tarif;
-	public Reparation( Client client, Boutique boutique, Date date_heure, Personnel createur, double tarif) {
+	@JoinColumn(name="ID_Personnel"  ,nullable=true )
+	
+	private Personnel personnel;
+	
+	public Reparation( Client client, Boutique boutique, Date date_heure, Personnel personnel) {
 		super();
 		
 		this.client = client;
 		this.boutique = boutique;
 		this.date_heure = date_heure;
-		this.Createur = createur;
-		this.tarif = tarif;
+		this.personnel = personnel;
+		
 	}
 	public Reparation() {
 		super();
@@ -62,12 +65,7 @@ private Long Rid;
 	public void setArticle(Article article) {
 		this.article = article;
 	}
-	public double getTarif() {
-		return tarif;
-	}
-	public void setTarif(double tarif) {
-		this.tarif = tarif;
-	}
+	
 	public Client getClient() {
 		return client;
 	}
@@ -86,11 +84,11 @@ private Long Rid;
 	public void setDate_heure(Date date_heure) {
 		this.date_heure = date_heure;
 	}
-	public Personnel getId_Créateur() {
-		return Createur;
+	public Personnel getId_personnel() {
+		return personnel;
 	}
 	public void setId_Créateur(Personnel Createur) {
-		this.Createur = Createur;
+		this.personnel = Createur;
 	}
 	
 }

@@ -16,12 +16,12 @@ public class Client implements Serializable{
 
 
 private Long Id_Client;
-private String type_client;
+private String typeClient;
 private String nom;
 private String adresse;
 private String mail;
 @Column(length=13)
-private String Num_tel;
+private String numtel;
 
 public Long getId_Client() {
 	return Id_Client;
@@ -29,11 +29,11 @@ public Long getId_Client() {
 public void setId_Client(Long id_Client) {
 	Id_Client = id_Client;
 }
-public String getType_client() {
-	return type_client;
+public String getTypeClient() {
+	return typeClient;
 }
-public void setType_client(String type_client) {
-	this.type_client = type_client;
+public void setTypeClient(String type_client) {
+	this.typeClient = type_client;
 }
 public String getNom() {
 	return nom;
@@ -53,20 +53,20 @@ public String getMail() {
 public void setMail(String mail) {
 	this.mail = mail;
 }
-public String getNum_tel() {
-	return Num_tel;
+public String getNumtel() {
+	return numtel;
 }
-public void setNum_tel(String num_tel) {
-	Num_tel = num_tel;
+public void setNum_tel(String numtel) {
+	this.numtel = numtel;
 }
 
 public Client(String type_client, String nom, String adresse, String mail, String num_tel, String id_boutique) {
 	super();
-	this.type_client = type_client;
+	this.typeClient = type_client;
 	this.nom = nom;
 	this.adresse = adresse;
 	this.mail = mail;
-	Num_tel = num_tel;
+	this.numtel = num_tel;
 	
 }
 public Client() {

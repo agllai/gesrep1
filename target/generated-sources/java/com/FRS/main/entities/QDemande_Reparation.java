@@ -33,9 +33,6 @@ public class QDemande_Reparation extends EntityPathBase<Demande_Reparation> {
     // inherited
     public final QClient client;
 
-    // inherited
-    public final QPersonnel Createur;
-
     //inherited
     public final DatePath<java.sql.Date> date_heure;
 
@@ -45,11 +42,11 @@ public class QDemande_Reparation extends EntityPathBase<Demande_Reparation> {
 
     public final NumberPath<Long> DRid = createNumber("DRid", Long.class);
 
-    //inherited
-    public final NumberPath<Long> Rid;
+    // inherited
+    public final QPersonnel personnel;
 
     //inherited
-    public final NumberPath<Double> tarif;
+    public final NumberPath<Long> Rid;
 
     public final QType_Panne type_panne;
 
@@ -75,10 +72,9 @@ public class QDemande_Reparation extends EntityPathBase<Demande_Reparation> {
         this.article = _super.article;
         this.boutique = _super.boutique;
         this.client = _super.client;
-        this.Createur = _super.Createur;
         this.date_heure = _super.date_heure;
+        this.personnel = _super.personnel;
         this.Rid = _super.Rid;
-        this.tarif = _super.tarif;
         this.type_panne = inits.isInitialized("type_panne") ? new QType_Panne(forProperty("type_panne")) : null;
     }
 

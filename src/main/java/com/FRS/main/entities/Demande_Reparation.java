@@ -21,9 +21,9 @@ public class Demande_Reparation extends Reparation {
 	private Type_Panne type_panne;
 
 	
-	public Demande_Reparation(Client client, Boutique boutique, Date date_heure, Personnel Createur, double tarif,
+	public Demande_Reparation(Client client, Boutique boutique, Date date_heure, Personnel Createur,
 			String designation, Type_Panne type_panne) {
-		super(client, boutique, date_heure, Createur, tarif);
+		super(client, boutique, date_heure, Createur);
 		Designation = designation;
 		this.type_panne = type_panne;
 	}
