@@ -1,8 +1,11 @@
 package com.FRS.main.web;
 
+
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -23,9 +26,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.FRS.main.dao.ClientRepository;
 import com.FRS.main.entities.Client;
+
+
 @RestController
 @RequestMapping("/Gesrep")
-@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
+@CrossOrigin(origins="http://localhost:4200",exposedHeaders="Access-Control-Allow-Origin", allowedHeaders="*")
+
 @Transactional
 public class ClientCotroller  {
 	@Autowired
@@ -37,7 +43,7 @@ public ClientRepository clientRepository;
 //		CustomDateEditor editor = new CustomDateEditor(dateFormat, true);
 //		binder.registerCustomEditor(Date.class, editor);
 //	}
-	@GetMapping(value="/Client", produces=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="/Client", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<Client> GetClients() {
 		return clientRepository.findAll();
 	}
@@ -68,9 +74,13 @@ public ClientRepository clientRepository;
 		
 	}
 
-	@PostMapping(value="/client",produces=MediaType.APPLICATION_JSON_VALUE)
-	public void Create(@RequestBody Client client) {
-		clientRepository.save(client);
+	@PostMapping(value="/client",produces=MediaType.APPLICATION_JSON_UTF8_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public Client Create(@RequestBody Client client) {
+		Client c=new Client();
+		
+		c.setAdresse(client.getAdresse());
+		c=client;
+	return	clientRepository.save(c);
 
 	}
 	

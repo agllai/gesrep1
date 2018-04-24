@@ -9,25 +9,36 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ResponceWrapperService } from './Srevice/ResponceWrapperService';
 import { ClientService } from './Srevice/ClientService';
+import { ClientComponent } from './Component/client/client.component';
+
+import {HttpClientModule} from '@angular/common/http'
+import { InterceptorModule ,HttpsRequestInterceptor} from './Interceptor.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResponceWrapperComponent
+    ResponceWrapperComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    InterceptorModule,
     RouterModule.forRoot([
-      {path:"",
+      {path:"\rw",
       component:ResponceWrapperComponent
     },
     {
       path:"\op",
       component:AppComponent
+    },
+    {
+      path:"",
+      component:ClientComponent
     }
 
     ])

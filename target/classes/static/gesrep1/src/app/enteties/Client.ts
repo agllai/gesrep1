@@ -1,9 +1,10 @@
 export class Client{
-    Id_Client:number;
-    typeClient:String;
-    nom:String;
-    adresse:String;
-    mail:String;
-    numtel:number;
+  
+   public typeClient:String;
+   public nom:String;
+   public adresse:String;
+   public mail:String;
+   public numtel:number;
+    public Id_Client:number;
     constructor() { }
 }
