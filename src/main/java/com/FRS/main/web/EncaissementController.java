@@ -28,7 +28,7 @@ import com.FRS.main.entities.Encaissement;
 public class EncaissementController {
 @Autowired
 EncaissementRepository EncRep;
-@PostMapping(value="/Encaissement", produces=MediaType.APPLICATION_JSON_VALUE)
+@PostMapping(value="/Encaissement", produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 public Encaissement Create(@RequestBody Encaissement Enc) {
 	return EncRep.save(Enc);
 	}

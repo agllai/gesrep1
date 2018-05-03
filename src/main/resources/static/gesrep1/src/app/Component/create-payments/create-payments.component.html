@@ -1,0 +1,72 @@
+<div class="container col-md-4 responsive" style="padding-top: 0px">
+
+  <form (ngSubmit)="processForm(payment)"  >
+      <div class="form group">
+          <label for="payment"><h3> Payment </h3></label>
+          <div id="payment">
+
+           
+    
+        <div class="form group">
+          <label for="PaymentMethod">Payment method</label>
+          <input id="PaymentMethod" type="text" name="PaymentMethod" class="form-control" [(ngModel)]="payment.MoyenPaiment">
+      
+        </div>
+        <div class="form group">
+          <label for="amount-paid">amount paid  </label>
+          <input id="amount-paid" type="number" name="amount-paid" class="form-control" [(ngModel)]="payment.MontantPaye" >
+        </div>
+        <div class="form group">
+          <label for="discount">discount</label>
+          <input id="discount" type="number" name="discount" class="form-control" [(ngModel)]="payment.Reduction" >
+        </div>
+        <div class="form group">
+          <label for="commentaire">amount remains</label>
+          <input id="commentaire" type="textarea" name="commentaire" class="form-control" [(ngModel)]="payment.ResteAPaye" >
+        </div>
+        <div class="form group">
+          <label for="codeSecurite">total Price</label>
+          <input id="codeSecurite" type="text" name="codeSecurite" class="form-control" [(ngModel)]="payment.tarif" >
+        </div>
+        <div class="form group">
+            <label for="TotalHT"> total HT</label>
+             <input id="TotalHT" type="number" name="Designation" class="form-control" [(ngModel)]="payment.TotalHT" >
+        </div>
+        <div class="form group">
+            <label for="TotalTTC">TotalTTC</label>
+             <input id="TotalTTC" type="number" name="TotalTTC" class="form-control" [(ngModel)]="payment.TotalTTC" >
+        </div>
+        <div class="form group">
+            <label for="TVA">TVA</label>
+             <input id="TVA" type="text" name="TVA" class="form-control" [(ngModel)]="payment.TVA" >
+        </div>
+        <div class="form group">
+            <label for="article-id">Article ID</label>
+             <input id="article-id" type="text" name="idArticle" class="form-control" [(ngModel)]="article.idArticle" >
+        </div>
+        <!--<div class="form group">
+            <label for="designation">Designation</label>
+             <input id="designation" type="text" name="Designation" class="form-control" [(ngModel)]="payment.DemandeReparation" >
+        </div>
+        <div class="form group">
+            <label for="designation">Designation</label>
+             <input id="designation" type="text" name="Designation" class="form-control" [(ngModel)]="payment.Boutique" >
+        </div>-->
+</div>
+
+
+
+
+
+
+
+      </div>
+     <input type="submit" class="btn btn-success" value="save">
+    
+  </form>
+  <div [hidden]="!submitted">
+    <div class="btn-group ">
+      <h4>You submitted successfully!  </h4>
+    </div>
+  </div>
+</div>

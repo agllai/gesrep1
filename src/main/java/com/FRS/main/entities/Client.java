@@ -12,10 +12,10 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Client implements Serializable{
-@Id @GeneratedValue(strategy= GenerationType.AUTO)
+@Id @GeneratedValue(strategy= GenerationType.IDENTITY)
 
-
-private Long Id_Client;
+@Column(name="idClient")
+private Long idClient;
 private String typeClient;
 private String nom;
 private String adresse;
@@ -23,12 +23,7 @@ private String mail;
 @Column(length=13)
 private String numtel;
 
-public Long getId_Client() {
-	return Id_Client;
-}
-public void setId_Client(Long id_Client) {
-	Id_Client = id_Client;
-}
+
 public String getTypeClient() {
 	return typeClient;
 }
@@ -60,8 +55,9 @@ public void setNum_tel(String numtel) {
 	this.numtel = numtel;
 }
 
-public Client(String type_client, String nom, String adresse, String mail, String num_tel, String id_boutique) {
+public Client(Long idClient,String type_client, String nom, String adresse, String mail, String num_tel, String id_boutique) {
 	super();
+	this.idClient=idClient;
 	this.typeClient = type_client;
 	this.nom = nom;
 	this.adresse = adresse;

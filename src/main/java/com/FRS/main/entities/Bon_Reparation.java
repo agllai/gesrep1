@@ -22,7 +22,7 @@ private long Id_Bon_Réparation;
 private Reparation réparation;
 	
 	@OneToOne
-	@JoinColumn(name="id_article")
+	@JoinColumn(name="idArticle")
 private Article article;
 	@ManyToOne
 	@JoinColumn(name="id_type_panne")

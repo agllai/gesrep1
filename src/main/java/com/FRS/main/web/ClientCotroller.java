@@ -30,7 +30,7 @@ import com.FRS.main.entities.Client;
 
 @RestController
 @RequestMapping("/Gesrep")
-@CrossOrigin(origins="http://localhost:4200",exposedHeaders="Access-Control-Allow-Origin", allowedHeaders="*")
+//@CrossOrigin(origins="http://localhost:4200",exposedHeaders="Access-Control-Allow-Origin", allowedHeaders="*")
 
 @Transactional
 public class ClientCotroller  {
@@ -61,14 +61,14 @@ public ClientRepository clientRepository;
 		
 	}
 
-@DeleteMapping(value="/Client/{id_client}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public String DeleteClient(@PathVariable Long id_client) {
-	Client client =clientRepository.findOne(id_client);
+@DeleteMapping(value="/Client/{idClient}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public String DeleteClient(@PathVariable Long idClient) {
+	Client client =clientRepository.findOne(idClient);
 		if(client==null)
 			return "Client introuvable";
 		else
 		{
-			clientRepository.delete(id_client);
+			clientRepository.delete(idClient);
 			return "Delete OK";
 		}
 		
@@ -77,10 +77,16 @@ public ClientRepository clientRepository;
 	@PostMapping(value="/client",produces=MediaType.APPLICATION_JSON_UTF8_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Client Create(@RequestBody Client client) {
 		Client c=new Client();
-		
-		c.setAdresse(client.getAdresse());
 		c=client;
-	return	clientRepository.save(c);
+		Client c2=new Client();
+		Client c1=clientRepository.findByNumtel(c.getNumtel());
+		if(c1!=null) {
+		c2 = c1;
+		}else {
+		c2=clientRepository.save(c);
+		}
+		
+	return	c2;
 
 	}
 	

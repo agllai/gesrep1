@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public class ResponceWrapper {
-	public Demande_Reparation DR;
+	//public Demande_Reparation DR;
 	public Client client;
 //	public Encaissement Enc;
 	public Article article;
@@ -69,7 +69,7 @@ public class ResponceWrapper {
 	public ResponceWrapper( Demande_Reparation dR, Client client, Article article) {
 		super();
 		
-		this.DR = dR;
+		//this.DR = dR;
 		this.client = client;
 //		this.Enc = enc;
 		this.article = article;

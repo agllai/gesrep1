@@ -20,7 +20,7 @@ private Long Id_Tache_Réparation;
 	 @JoinColumn(name="Id_Etat")
 private Etat etat;
 	 @OneToOne
-	 @JoinColumn(name="Id_Article")
+	 @JoinColumn(name="IdArticle")
 private Article article;
 	 @ManyToOne
 	 @JoinColumn(name="DRid")

@@ -24,13 +24,13 @@ public class QArticle extends EntityPathBase<Article> {
 
     public final QBoutique boutique;
 
-    public final StringPath Code_Securite = createString("Code_Securite");
+    public final StringPath CodeSecurite = createString("CodeSecurite");
 
     public final StringPath commentaire = createString("commentaire");
 
-    public final DatePath<java.sql.Date> Date_récupération = createDate("Date_récupération", java.sql.Date.class);
+    public final DatePath<java.sql.Date> DateRécupération = createDate("DateRécupération", java.sql.Date.class);
 
-    public final NumberPath<Long> Id_Article = createNumber("Id_Article", Long.class);
+    public final NumberPath<Long> IdArticle = createNumber("IdArticle", Long.class);
 
     public final BooleanPath Livraison = createBoolean("Livraison");
 
@@ -42,7 +42,7 @@ public class QArticle extends EntityPathBase<Article> {
 
     public final QReparation reparation;
 
-    public final StringPath Serial_Number = createString("Serial_Number");
+    public final StringPath SerialNumber = createString("SerialNumber");
 
     public QArticle(String variable) {
         this(Article.class, forVariable(variable), INITS);

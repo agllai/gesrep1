@@ -31,7 +31,7 @@ public class Encaissement implements Serializable{
 	 private Demande_Reparation demande_reparation;
 	private double Total_HT;
 	 @ManyToOne
-	 @JoinColumn(name="id_article")
+	 @JoinColumn(name="idArticle")
 	 private Article article;
 	
 	private double Total_TTC;

@@ -32,7 +32,7 @@ private Long Rid;
 	 @JoinColumn(name="Id_boutique")
 	private Boutique boutique;
 	@OneToOne
-	 @JoinColumn(name="Id_Article")
+	 @JoinColumn(name="IdArticle")
 	 private Article article;
 	private Date date_heure;
 	@ManyToOne
