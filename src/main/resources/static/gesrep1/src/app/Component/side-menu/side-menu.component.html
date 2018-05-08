@@ -9,21 +9,28 @@
       </button>
   </div>
     <div class="sidebar-nav navbar-collapse collapse " aria-expanded="true">
-        <ul class="nav navbar-nav" id="side-menu">
+        <ul class="nav navbar-nav nav-tabs" id="side-menu">
             
             
-           <li>
-                <a href="./listArticle" > Article list</a>
+           <li [ngClass]="isactive('listArticle')" role="presentation">
+                <a routerLink="./listArticle" (click)="onclick('listArticle')"> Article list</a>
             </li>
-            <li>
-                <a href="./CreateArticle" > Create Article</a>                                                   
+            <li [ngClass]="isactive('CreateArticle')" role="presentation"> 
+                <a routerLink="./CreateArticle" (click)="onclick('CreateArticle')"> Create Article</a>                                                   
             </li>
-            <li>
-                <a href="./CreateClient"  > Create Client</a>                                                     
+            <li [ngClass]="isactive('CreateClient')" role="presentation">
+                <a routerLink="./CreateClient" (click)="onclick('CreateClient')" > Create Client</a>                                                     
             </li>
-            <li>
-                <a href="./ListeClient"  >Clients List</a>                                                     
+            <li [ngClass]="isactive('ListeClient')" role="presentation">
+                <a routerLink="./ListeClient"  (click)="onclick('ListeClient')">Clients List</a>                                                     
             </li>
+            <li [ngClass]="isactive('MakePayment')" role="presentation">
+                <a routerLink="./MakePayment"  (click)="onclick('MakePayment')">MakePayment</a>                                                     
+            </li>
+            <li [ngClass]="isactive('Piece/ListPiece')" role="presentation">
+                    <a routerLink="./Piece/ListPiece"  (click)="onclick('Piece/ListPiece')">ListPiece</a>                                                     
+                </li>
+            
             
             
         </ul>

@@ -27,7 +27,7 @@ public class QClient extends EntityPathBase<Client> {
 
     public final StringPath nom = createString("nom");
 
-    public final StringPath numtel = createString("numtel");
+    public final NumberPath<Long> numtel = createNumber("numtel", Long.class);
 
     public final StringPath typeClient = createString("typeClient");
 

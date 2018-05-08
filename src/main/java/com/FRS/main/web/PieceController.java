@@ -25,7 +25,7 @@ import com.FRS.main.entities.Piece;
 public class PieceController {
 @Autowired
 PieceRepository pieceRep;
-@PostMapping(value="/Piece",produces=MediaType.APPLICATION_JSON_VALUE)
+@PostMapping(value="/Piece",produces=MediaType.APPLICATION_JSON_VALUE , consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 public Piece CreateArticle(@RequestBody Piece	piece) {
 	return pieceRep.save(piece);
 }
@@ -37,7 +37,7 @@ public Piece UpdateArticle(@RequestBody Piece	piece) {
 public Piece GetArticle(@PathVariable Long Id_Piece) {
 	return pieceRep.findOne(Id_Piece);
 }
-@GetMapping(value="/Piece/",produces=MediaType.APPLICATION_JSON_VALUE)
+@GetMapping(value="/Piece",produces=MediaType.APPLICATION_JSON_VALUE)
 public List<Piece> GetArticles() {
 	return pieceRep.findAll();
 }

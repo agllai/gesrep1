@@ -3,18 +3,18 @@ import { Demande_Reparation } from "./Demande_Reparation";
 import { Article } from "./Article";
 
 export class Encaissement{
-    Id_Encaissement:number;
+    IdEncaissement:number;
 	Boutique:Boutique;
 	Montant_avance:number;
-	Moyen_paiment:String ;
-	Réduction:number;
-	Montant_paye:number;
-	Demande_Reparation : Demande_Reparation;
-	Total_HT:number;
+	MoyenPaiment:String ;
+	Reduction:number;
+	MontantPaye:number;
+	DemandeReparation : Demande_Reparation;
+	TotalHT:number;
 	article:Article;
-	Total_TTC:number;
+	TotalTTC:number;
 	TVA:number;
-	Reste_a_Paye:number;
+	ResteAPaye:number;
 	tarif:number;
-
+	constructor() { }
 }

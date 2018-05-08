@@ -28,21 +28,21 @@ public class QArticle extends EntityPathBase<Article> {
 
     public final StringPath commentaire = createString("commentaire");
 
-    public final DatePath<java.sql.Date> DateRécupération = createDate("DateRécupération", java.sql.Date.class);
+    public final DatePath<java.sql.Date> dateRécupération = createDate("dateRécupération", java.sql.Date.class);
 
-    public final NumberPath<Long> IdArticle = createNumber("IdArticle", Long.class);
+    public final NumberPath<Long> idArticle = createNumber("idArticle", Long.class);
 
-    public final BooleanPath Livraison = createBoolean("Livraison");
+    public final BooleanPath livraison = createBoolean("livraison");
 
-    public final StringPath Marque = createString("Marque");
+    public final StringPath marque = createString("marque");
 
-    public final StringPath Model = createString("Model");
+    public final StringPath model = createString("model");
 
     public final StringPath operateur = createString("operateur");
 
     public final QReparation reparation;
 
-    public final StringPath SerialNumber = createString("SerialNumber");
+    public final StringPath serialNumber = createString("serialNumber");
 
     public QArticle(String variable) {
         this(Article.class, forVariable(variable), INITS);

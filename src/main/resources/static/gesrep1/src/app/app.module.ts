@@ -9,19 +9,24 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ResponceWrapperService } from './Srevice/ResponceWrapperService';
 import { ClientService } from './Srevice/ClientService';
-import { ClientComponent } from './Component/client/client.component';
+import { ClientComponent } from './Component/Client/client/client.component';
 
 import {HttpClientModule} from '@angular/common/http'
 import { InterceptorModule ,HttpsRequestInterceptor} from './Interceptor.module';
 import { DemohelloComponent } from './Component/demohello/demohello.component';
 import { TopmenuComponent } from './Component/topmenu/topmenu.component';
 import { SideMenuComponent } from './Component/side-menu/side-menu.component';
-import { ListeClientComponent } from './Component/liste-client/liste-client.component';
-import { CreateArticleComponent } from './Component/create-article/create-article.component';
+import { ListeClientComponent } from './Component/Client/liste-client/liste-client.component';
+import { CreateArticleComponent } from './Component/Article/create-article/create-article.component';
 import { ArticleService } from './Srevice/article-service.service';
-import { ListArticleComponent } from './Component/list-article/list-article.component';
-import { CreatePaymentsComponent } from './Component/create-payments/create-payments.component';
+import { ListArticleComponent } from './Component/Article/list-article/list-article.component';
+import { CreatePaymentsComponent } from './Component/Payment/create-payments/create-payments.component';
 import { PaymentService } from './Srevice/payment.service';
+import { ListComosantComponent } from './Component/Composant/list-composant/list-composant.component';
+import { CreateComposantComponent } from './Component/Composant/create-composant/create-composant.component';
+import { CreatePieceComponent } from './Component/Piece/create-piece/create-piece.component';
+import { PieceService } from './Srevice/piece.service';
+import { ListPieceComponent } from './Component/Piece/list-piece/list-piece.component';
 
 
 @NgModule({
@@ -33,9 +38,13 @@ import { PaymentService } from './Srevice/payment.service';
     TopmenuComponent,
     SideMenuComponent,
     ListeClientComponent,
-    CreateArticleComponent,
-    ListArticleComponent,
-    CreatePaymentsComponent
+    //CreateArticleComponent,
+   // ListArticleComponent,
+    CreatePaymentsComponent,
+    ListComosantComponent,
+    CreateComposantComponent,
+    CreatePieceComponent,
+    ListPieceComponent
   ],
   imports: [
     BrowserModule,
@@ -47,36 +56,45 @@ import { PaymentService } from './Srevice/payment.service';
     
     
     RouterModule.forRoot([
-      {path:"\rw",
+      {path:"rw",
       component:ResponceWrapperComponent
     },
     {
-      path:"\op",
+      path:"op",
       component:AppComponent
     },
+    
     {
-      path:"\CreateClient",
+      path:"CreateClient",
       component:ClientComponent
     },
-   { path:"\ListeClient",
+   { path:"ListeClient",
     component:ListeClientComponent
   },
-  {
-    path:"\CreateArticle",
+  /*{
+    path:"CreateArticle",
     component:CreateArticleComponent
   },
   {
-    path:"\listArticle",
+    path:"listArticle",
   component:ListArticleComponent
+  },*/
+  {
+    path:"MakePayment",
+    component:CreatePaymentsComponent
   },
   {
-    path:"\MakePayment",
-    component:CreatePaymentsComponent
+    path:"Piece/CreatePiece",
+    component:CreatePieceComponent
+  },
+  {
+    path:'Piece/ListPiece',
+    component:ListPieceComponent
   }
     ])
     
   ],
-  providers: [ResponceWrapperService,ClientService,ArticleService,PaymentService],
+  providers: [ResponceWrapperService,ClientService,ArticleService,PaymentService,PieceService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   
   bootstrap: [AppComponent]

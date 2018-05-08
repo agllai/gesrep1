@@ -16,10 +16,10 @@ import javax.persistence.OneToOne;
 @Entity
 public class Article implements Serializable{
 @Id	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private long IdArticle;
-	private String SerialNumber;
-	private String Marque;
-	private String Model;
+	private long idArticle;
+	private String serialNumber;
+	private String marque;
+	private String model;
 	@ManyToOne
 	@JoinColumn(name="id_boutique")
 	private Boutique boutique;
@@ -30,62 +30,132 @@ public class Article implements Serializable{
 	@OneToOne
 	@JoinColumn(name="Rid")
 	private Reparation reparation;
-	private Boolean Livraison;
-	private Date DateRécupération;
+	private Boolean livraison;
+	private Date dateRécupération;
 	private String commentaire;
 	private String CodeSecurite;
+	
+/**
+	 * @param idArticle
+	 * @param serialNumber
+	 * @param marque
+	 * @param model
+	 * @param boutique
+	 * @param operateur
+	 * @param reparation
+	 * @param livraison
+	 * @param dateRécupération
+	 * @param commentaire
+	 * @param codeSecurite
+	 */
 	public Article(long idArticle, String serialNumber, String marque, String model, Boutique boutique,
 			String operateur, Reparation reparation, Boolean livraison, Date dateRécupération, String commentaire,
 			String codeSecurite) {
 		super();
-		IdArticle = idArticle;
-		SerialNumber = serialNumber;
-		Marque = marque;
-		Model = model;
+		this.idArticle = idArticle;
+		this.serialNumber = serialNumber;
+		this.marque = marque;
+		this.model = model;
 		this.boutique = boutique;
 		this.operateur = operateur;
 		this.reparation = reparation;
-		Livraison = livraison;
-		DateRécupération = dateRécupération;
+		this.livraison = livraison;
+		this.dateRécupération = dateRécupération;
 		this.commentaire = commentaire;
-		CodeSecurite = codeSecurite;
+		this.CodeSecurite = codeSecurite;
 	}
+	
+/**
+ * @return the idArticle
+ */
+public long getIdArticle() {
+	return idArticle;
+}
+
+/**
+ * @param idArticle the idArticle to set
+ */
+public void setIdArticle(long idArticle) {
+	this.idArticle = idArticle;
+}
+
+/**
+ * @return the serialNumber
+ */
+public String getSerialNumber() {
+	return serialNumber;
+}
+
+/**
+ * @param serialNumber the serialNumber to set
+ */
+public void setSerialNumber(String serialNumber) {
+	this.serialNumber = serialNumber;
+}
+
+/**
+ * @return the marque
+ */
+public String getMarque() {
+	return marque;
+}
+
+/**
+ * @param marque the marque to set
+ */
+public void setMarque(String marque) {
+	this.marque = marque;
+}
+
+/**
+ * @return the model
+ */
+public String getModel() {
+	return model;
+}
+
+/**
+ * @param model the model to set
+ */
+public void setModel(String model) {
+	this.model = model;
+}
+
+/**
+ * @return the livraison
+ */
+public Boolean getLivraison() {
+	return livraison;
+}
+
+/**
+ * @param livraison the livraison to set
+ */
+public void setLivraison(Boolean livraison) {
+	this.livraison = livraison;
+}
+
+/**
+ * @return the dateRécupération
+ */
+public Date getDateRécupération() {
+	return dateRécupération;
+}
+
+/**
+ * @param dateRécupération the dateRécupération to set
+ */
+public void setDateRécupération(Date dateRécupération) {
+	this.dateRécupération = dateRécupération;
+}
+
 public String getCodeSecurite() {
 		return CodeSecurite;
 	}
 	public void setCodeSecurite(String codeSecurite) {
 		CodeSecurite = codeSecurite;
 	}
-	public void setSerialNumber(String serialNumber) {
-		SerialNumber = serialNumber;
-	}
-	public void setDateRécupération(Date dateRécupération) {
-		DateRécupération = dateRécupération;
-	}
-	public long getIdArticle() {
-		return IdArticle;
-	}
-	public void setIdArticle(long idArticle) {
-		IdArticle = idArticle;
-	}
-	public String getSerialNumber() {
-		return SerialNumber;
-	}
-	public void setSerial_Number(String serialNumber) {
-		SerialNumber = serialNumber;
-	}
-	public String getMarque() {
-		return Marque;
-	}
-	public void setMarque(String marque) {
-		Marque = marque;
-	}
-	public String getModel() {
-		return Model;
-	}
-	public void setModel(String model) {
-		Model = model;
-	}
+	
 	public Boutique getBoutique() {
 		return boutique;
 	}
@@ -99,18 +169,6 @@ public String getCodeSecurite() {
 		this.operateur = operateur;
 	}
 
-	public Boolean getLivraison() {
-		return Livraison;
-	}
-	public void setLivraison(Boolean livraison) {
-		Livraison = livraison;
-	}
-	public Date getDateRécupération() {
-		return DateRécupération;
-	}
-	public void setDate_récupération(Date dateRécupération) {
-		DateRécupération = dateRécupération;
-	}
 	public String getCommentaire() {
 		return commentaire;
 	}

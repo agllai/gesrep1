@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FRS.main.dao.EncaissementRepository;
+import com.FRS.main.entities.Article;
 import com.FRS.main.entities.Encaissement;
-
+import com.FRS.main.dao.ArticleRepository;
 
 
 
@@ -28,8 +29,13 @@ import com.FRS.main.entities.Encaissement;
 public class EncaissementController {
 @Autowired
 EncaissementRepository EncRep;
+@Autowired
+ArticleRepository ArticleRep;
+
 @PostMapping(value="/Encaissement", produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 public Encaissement Create(@RequestBody Encaissement Enc) {
+	Article article= ArticleRep.findOne(Enc.getArticle().getIdArticle());
+	Enc.setArticle(article);
 	return EncRep.save(Enc);
 	}
 @PutMapping(value="/Encaissement",produces=MediaType.APPLICATION_JSON_VALUE)
@@ -40,7 +46,7 @@ public Encaissement Update(@RequestBody Encaissement	Enc) {
 public Encaissement GetEnc(@PathVariable Long Id_Encaissement) {
 	return EncRep.findOne(Id_Encaissement);
 	}
-@GetMapping(value="/Encaissement/",produces=MediaType.APPLICATION_JSON_VALUE)
+@GetMapping(value="/Encaissement",produces=MediaType.APPLICATION_JSON_VALUE)
 public List<Encaissement> GetEncs() {
 	return EncRep.findAll();
 	}

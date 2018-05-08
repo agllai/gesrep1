@@ -12,6 +12,6 @@ export class Article{
 	livraison:Boolean;
 	dateRecuperation:Date;
 	commentaire:String;
-	designation:String;
 	codeSecurite:String;
+	designation:String;
 }

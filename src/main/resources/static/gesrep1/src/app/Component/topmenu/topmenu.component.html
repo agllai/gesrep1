@@ -10,10 +10,12 @@
             </div>
             <div class="collapse navbar-collapse nav-pills nav-stacked nav-justified" id="navcol-1">
                 <ul class="nav navbar-nav">
-                    <li role="presentation"><a href="#">Create reparation demand </a></li>
-                    <li role="presentation"><a href="#">Create back reparation demand </a></li>
-                    <li role="presentation"><a href="#">Create Devis</a></li>
-                    <li role="presentation"><a href="#">payment</a></li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" role="presentation">
+                        <a routerLink="./CreateReparation"  >Create reparation demand </a>                                                     
+                    </li>
+                    <li routerLinkActive="active" role="presentation"><a routerLink="./CreateReparation" routerLink="./CreateReparation" >Create back reparation demand </a></li>
+                    <li routerLinkActive="active" role="presentation"><a routerLink="./CreateDevis" >Create Devis</a></li>
+                    <li routerLinkActive="active" role="presentation"><a routerLink="./MakePayment" >payment</a></li>
                 </ul>
                 <button class="btn btn-primary navbar-btn navbar-right navbar-nav" type="button"><strong>SIGN OUT</strong></button>
             

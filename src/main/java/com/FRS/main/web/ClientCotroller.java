@@ -81,7 +81,7 @@ public ClientRepository clientRepository;
 		Client c2=new Client();
 		Client c1=clientRepository.findByNumtel(c.getNumtel());
 		if(c1!=null) {
-		c2 = c1;
+		c2.setIdClient(c1.getIdClient());
 		}else {
 		c2=clientRepository.save(c);
 		}

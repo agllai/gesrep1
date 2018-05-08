@@ -10,5 +10,6 @@ import com.FRS.main.entities.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Long> {
 public Client findByNom(String nom);
-public Client findByNumtel(String numtel);
+public Client findByNumtel(Long numtel);
+
 }

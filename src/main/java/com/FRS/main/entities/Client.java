@@ -21,7 +21,7 @@ private String nom;
 private String adresse;
 private String mail;
 @Column(length=13)
-private String numtel;
+private Long numtel;
 
 
 public String getTypeClient() {
@@ -48,14 +48,14 @@ public String getMail() {
 public void setMail(String mail) {
 	this.mail = mail;
 }
-public String getNumtel() {
+public Long getNumtel() {
 	return numtel;
 }
-public void setNum_tel(String numtel) {
+public void setNum_tel(Long numtel) {
 	this.numtel = numtel;
 }
 
-public Client(Long idClient,String type_client, String nom, String adresse, String mail, String num_tel, String id_boutique) {
+public Client(Long idClient,String type_client, String nom, String adresse, String mail, Long num_tel, String id_boutique) {
 	super();
 	this.idClient=idClient;
 	this.typeClient = type_client;
@@ -68,6 +68,20 @@ public Client(Long idClient,String type_client, String nom, String adresse, Stri
 public Client() {
 	super();
 	
+}
+/**
+ * @return
+ */
+public long getIdClient() {
+	// TODO Auto-generated method stub
+	return this.idClient;
+}
+/**
+ * @param idClient2
+ */
+public void setIdClient(long idClient) {
+	// TODO Auto-generated method stub
+	this.idClient=idClient;
 }
 
 }

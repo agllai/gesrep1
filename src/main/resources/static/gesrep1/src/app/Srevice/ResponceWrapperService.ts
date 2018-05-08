@@ -60,7 +60,7 @@ private demande_reparation:Demande_Reparation=new Demande_Reparation();
  private handleError(error: any) {
     console.log('Error', error); // for demo purposes only
     return Observable.throw(error||"SERVER ERROR");}
-setter(article:Article,client:Client)
+lsetter(article:Article,client:Client)
 {
   this.article=article;
   this.client=client;
