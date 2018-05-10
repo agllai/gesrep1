@@ -15,7 +15,7 @@ public class Client implements Serializable{
 @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
 
 @Column(name="idClient")
-private Long idClient;
+private Long IdClient=-1L;
 private String typeClient;
 private String nom;
 private String adresse;
@@ -40,7 +40,7 @@ public String getAdresse() {
 	return adresse;
 }
 public void setAdresse(String adresse) {
-	adresse = adresse;
+	this.adresse = adresse;
 }
 public String getMail() {
 	return mail;
@@ -54,10 +54,17 @@ public Long getNumtel() {
 public void setNum_tel(Long numtel) {
 	this.numtel = numtel;
 }
+public long getIdClient() {
+	return this.IdClient;
+}
 
-public Client(Long idClient,String type_client, String nom, String adresse, String mail, Long num_tel, String id_boutique) {
+public void setIdClient(long IdClient) {
+	// TODO Auto-generated method stub
+	this.IdClient=IdClient;
+}
+public Client(Long IdClient,String type_client, String nom, String adresse, String mail, Long num_tel, String id_boutique) {
 	super();
-	this.idClient=idClient;
+	this.IdClient=IdClient;
 	this.typeClient = type_client;
 	this.nom = nom;
 	this.adresse = adresse;
@@ -72,16 +79,6 @@ public Client() {
 /**
  * @return
  */
-public long getIdClient() {
-	// TODO Auto-generated method stub
-	return this.idClient;
-}
-/**
- * @param idClient2
- */
-public void setIdClient(long idClient) {
-	// TODO Auto-generated method stub
-	this.idClient=idClient;
-}
+
 
 }

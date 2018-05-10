@@ -24,11 +24,11 @@ public class QArticle extends EntityPathBase<Article> {
 
     public final QBoutique boutique;
 
-    public final StringPath CodeSecurite = createString("CodeSecurite");
+    public final StringPath codeSecurite = createString("codeSecurite");
 
     public final StringPath commentaire = createString("commentaire");
 
-    public final DatePath<java.sql.Date> dateRécupération = createDate("dateRécupération", java.sql.Date.class);
+    public final DatePath<java.sql.Date> dateRecuperation = createDate("dateRecuperation", java.sql.Date.class);
 
     public final NumberPath<Long> idArticle = createNumber("idArticle", Long.class);
 

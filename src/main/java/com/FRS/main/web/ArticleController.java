@@ -33,7 +33,7 @@ public class ArticleController {
 	@Autowired
 	ArticleRepository articleRepository;
 	
-	@PostMapping(value="/Article", produces=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="/Article", produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Article Create(@RequestBody Article article) {
 		return articleRepository.save(article);
 	}

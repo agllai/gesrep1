@@ -34,8 +34,6 @@ ArticleRepository ArticleRep;
 
 @PostMapping(value="/Encaissement", produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 public Encaissement Create(@RequestBody Encaissement Enc) {
-	Article article= ArticleRep.findOne(Enc.getArticle().getIdArticle());
-	Enc.setArticle(article);
 	return EncRep.save(Enc);
 	}
 @PutMapping(value="/Encaissement",produces=MediaType.APPLICATION_JSON_VALUE)

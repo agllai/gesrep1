@@ -22,31 +22,31 @@ public class QEncaissement extends EntityPathBase<Encaissement> {
 
     public static final QEncaissement encaissement = new QEncaissement("encaissement");
 
-    public final QArticle article;
+    public final QArticle Article;
 
-    public final QBoutique boutique;
+    public final QBoutique Boutique;
 
-    public final QDemande_Reparation demande_reparation;
+    public final QDemande_Reparation demandeReparation;
 
-    public final NumberPath<Long> Id_Encaissement = createNumber("Id_Encaissement", Long.class);
+    public final NumberPath<Long> IdEncaissement = createNumber("IdEncaissement", Long.class);
 
-    public final NumberPath<Double> Montant_avance = createNumber("Montant_avance", Double.class);
+    public final NumberPath<Double> MontantAvance = createNumber("MontantAvance", Double.class);
 
-    public final NumberPath<Double> Montant_paye = createNumber("Montant_paye", Double.class);
+    public final NumberPath<Double> MontantPaye = createNumber("MontantPaye", Double.class);
 
-    public final StringPath Moyen_paiment = createString("Moyen_paiment");
+    public final StringPath MoyenPaiment = createString("MoyenPaiment");
 
-    public final NumberPath<Double> Reste_a_Paye = createNumber("Reste_a_Paye", Double.class);
+    public final NumberPath<Long> Reduction = createNumber("Reduction", Long.class);
 
-    public final NumberPath<Long> Réduction = createNumber("Réduction", Long.class);
+    public final NumberPath<Double> ResteAPaye = createNumber("ResteAPaye", Double.class);
 
     public final ListPath<Tache_Reparation, QTache_Reparation> tacheRep = this.<Tache_Reparation, QTache_Reparation>createList("tacheRep", Tache_Reparation.class, QTache_Reparation.class, PathInits.DIRECT2);
 
-    public final NumberPath<Double> tarif = createNumber("tarif", Double.class);
+    public final NumberPath<Double> Tarif = createNumber("Tarif", Double.class);
 
-    public final NumberPath<Double> Total_HT = createNumber("Total_HT", Double.class);
+    public final NumberPath<Double> TotalHT = createNumber("TotalHT", Double.class);
 
-    public final NumberPath<Double> Total_TTC = createNumber("Total_TTC", Double.class);
+    public final NumberPath<Double> TotalTTC = createNumber("TotalTTC", Double.class);
 
     public final NumberPath<Integer> TVA = createNumber("TVA", Integer.class);
 
@@ -68,9 +68,9 @@ public class QEncaissement extends EntityPathBase<Encaissement> {
 
     public QEncaissement(Class<? extends Encaissement> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.article = inits.isInitialized("article") ? new QArticle(forProperty("article"), inits.get("article")) : null;
-        this.boutique = inits.isInitialized("boutique") ? new QBoutique(forProperty("boutique")) : null;
-        this.demande_reparation = inits.isInitialized("demande_reparation") ? new QDemande_Reparation(forProperty("demande_reparation"), inits.get("demande_reparation")) : null;
+        this.Article = inits.isInitialized("Article") ? new QArticle(forProperty("Article"), inits.get("Article")) : null;
+        this.Boutique = inits.isInitialized("Boutique") ? new QBoutique(forProperty("Boutique")) : null;
+        this.demandeReparation = inits.isInitialized("demandeReparation") ? new QDemande_Reparation(forProperty("demandeReparation"), inits.get("demandeReparation")) : null;
     }
 
 }

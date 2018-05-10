@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Article implements Serializable{
-@Id	@GeneratedValue(strategy= GenerationType.IDENTITY)
+@Id	@GeneratedValue(strategy= GenerationType.AUTO)
 	private long idArticle;
 	private String serialNumber;
 	private String marque;
@@ -31,9 +31,9 @@ public class Article implements Serializable{
 	@JoinColumn(name="Rid")
 	private Reparation reparation;
 	private Boolean livraison;
-	private Date dateRécupération;
+	private Date dateRecuperation;
 	private String commentaire;
-	private String CodeSecurite;
+	private String codeSecurite;
 	
 /**
 	 * @param idArticle
@@ -49,7 +49,7 @@ public class Article implements Serializable{
 	 * @param codeSecurite
 	 */
 	public Article(long idArticle, String serialNumber, String marque, String model, Boutique boutique,
-			String operateur, Reparation reparation, Boolean livraison, Date dateRécupération, String commentaire,
+			String operateur, Reparation reparation, Boolean livraison, Date dateRecuperation, String commentaire,
 			String codeSecurite) {
 		super();
 		this.idArticle = idArticle;
@@ -60,9 +60,9 @@ public class Article implements Serializable{
 		this.operateur = operateur;
 		this.reparation = reparation;
 		this.livraison = livraison;
-		this.dateRécupération = dateRécupération;
+		this.dateRecuperation = dateRecuperation;
 		this.commentaire = commentaire;
-		this.CodeSecurite = codeSecurite;
+		this.codeSecurite = codeSecurite;
 	}
 	
 /**
@@ -97,7 +97,7 @@ public void setSerialNumber(String serialNumber) {
  * @return the marque
  */
 public String getMarque() {
-	return marque;
+	return this.marque;
 }
 
 /**
@@ -111,7 +111,7 @@ public void setMarque(String marque) {
  * @return the model
  */
 public String getModel() {
-	return model;
+	return this.model;
 }
 
 /**
@@ -125,7 +125,7 @@ public void setModel(String model) {
  * @return the livraison
  */
 public Boolean getLivraison() {
-	return livraison;
+	return this.livraison;
 }
 
 /**
@@ -138,26 +138,26 @@ public void setLivraison(Boolean livraison) {
 /**
  * @return the dateRécupération
  */
-public Date getDateRécupération() {
-	return dateRécupération;
+public Date getDateRecuperation() {
+	return dateRecuperation;
 }
 
 /**
  * @param dateRécupération the dateRécupération to set
  */
-public void setDateRécupération(Date dateRécupération) {
-	this.dateRécupération = dateRécupération;
+public void setDateRécupération(Date dateRecuperation) {
+	this.dateRecuperation = dateRecuperation;
 }
 
 public String getCodeSecurite() {
-		return CodeSecurite;
+		return codeSecurite;
 	}
 	public void setCodeSecurite(String codeSecurite) {
-		CodeSecurite = codeSecurite;
+		this.codeSecurite = codeSecurite;
 	}
 	
 	public Boutique getBoutique() {
-		return boutique;
+		return this.boutique;
 	}
 	public void setBoutique(Boutique boutique) {
 		this.boutique = boutique;
