@@ -30,7 +30,7 @@ import com.FRS.main.entities.Client;
 
 @RestController
 @RequestMapping("/Gesrep")
-//@CrossOrigin(origins="http://localhost:4200",exposedHeaders="Access-Control-Allow-Origin", allowedHeaders="*")
+@CrossOrigin(origins="http://localhost:4200",exposedHeaders="Access-Control-Allow-Origin", allowedHeaders="*")
 
 @Transactional
 public class ClientCotroller  {

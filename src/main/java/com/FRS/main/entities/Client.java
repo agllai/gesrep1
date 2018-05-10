@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Client implements Serializable{
-@Id @GeneratedValue(strategy= GenerationType.IDENTITY)
+@Id @GeneratedValue(strategy= GenerationType.AUTO)
 
 @Column(name="idClient")
 private Long IdClient=-1L;
