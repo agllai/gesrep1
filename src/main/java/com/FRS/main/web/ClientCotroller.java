@@ -54,11 +54,12 @@ public ClientRepository clientRepository;
 		return clientRepository.findOne(id_client);
 	}
 
-	@PutMapping(value="/Client", produces=MediaType.APPLICATION_JSON_VALUE)
-	public Client Update( Client client) {
+	@PutMapping(value="/UpdateClient", produces=MediaType.APPLICATION_JSON_UTF8_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public Client Update(@RequestBody Client client) {
+		Client c=new Client();
 		
-		return clientRepository.save(client);
-		
+			c=clientRepository.save(client);
+		return c;
 	}
 
 @DeleteMapping(value="/Client/{idClient}",produces=MediaType.APPLICATION_JSON_VALUE)
@@ -76,14 +77,14 @@ public ClientRepository clientRepository;
 
 	@PostMapping(value="/client",produces=MediaType.APPLICATION_JSON_UTF8_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Client Create(@RequestBody Client client) {
-		Client c=new Client();
-		c=client;
+		
+	
 		Client c2=new Client();
-		Client c1=clientRepository.findByNumtel(c.getNumtel());
+		Client c1=clientRepository.findByNumtel(client.getNumtel());
 		if(c1!=null) {
-		c2.setIdClient(c1.getIdClient());
+			c2=client;
 		}else {
-			c2=clientRepository.save(c);
+			c2=clientRepository.save(client);
 		}
 		
 	return	c2;
